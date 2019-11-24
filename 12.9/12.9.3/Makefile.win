@@ -1,0 +1,31 @@
+# Project: 12.9.3
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = pe12-2a.o pe12-2b.o
+LINKOBJ  = pe12-2a.o pe12-2b.o
+LIBS     = -L"C:/Program Files (x86)/DEV-CPP/MinGW64/lib" -L"C:/Program Files (x86)/DEV-CPP/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc                                                                                                                   -g3 -g3
+INCS     = -I"C:/Program Files (x86)/DEV-CPP/MinGW64/include" -I"C:/Program Files (x86)/DEV-CPP/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/DEV-CPP/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/DEV-CPP/MinGW64/include" -I"C:/Program Files (x86)/DEV-CPP/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/DEV-CPP/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/DEV-CPP/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = 12.9.3.exe
+CXXFLAGS = $(CXXINCS) -g3 -g3
+CFLAGS   = $(INCS) -g3 -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+pe12-2a.o: pe12-2a.c
+	$(CC) -c pe12-2a.c -o pe12-2a.o $(CFLAGS)
+
+pe12-2b.o: pe12-2b.c
+	$(CC) -c pe12-2b.c -o pe12-2b.o $(CFLAGS)
